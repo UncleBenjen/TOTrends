@@ -1,0 +1,34 @@
+.footer{
+  width:100%;
+
+  margin-top:24px;
+  padding: 16px 0;
+
+  background-color: #000;
+  text-align: center;
+}
+.footer > p{
+  font-family:Roboto;
+  font-weight: 300;
+  
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.footer a{
+  font-style: inherit;
+  font-size: inherit;
+  color:inherit;
+  font-weight: bold;
+}
+.footer  a:hover{
+  color:#c7c7c7;
+}
+
+.footer span{
+  flex: 1 0 auto;
+  margin: 8px;
+}
+

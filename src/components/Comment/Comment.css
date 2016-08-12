@@ -1,0 +1,35 @@
+.commentContainer{
+    margin:16px;
+}
+
+
+.commentText{
+    white-space: pre-wrap;
+    font-family: 'Roboto';
+    font-weight: 300;
+    font-size: 18px; 
+    line-height: 1.35;
+}
+
+/* Larger than phablet */
+@media (min-width: 550px) {
+
+}
+
+/* Larger than tablet */
+@media (min-width: 750px) {
+
+
+}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {
+
+}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {
+    .commentText{
+        font-size: 22px; 
+    }
+}

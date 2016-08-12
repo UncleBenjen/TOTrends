@@ -1,0 +1,1 @@
+export trends from './trends'
