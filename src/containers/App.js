@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { Link } from 'react-router'
 import { routerActions } from 'react-router-redux'
-import * as actionCreators from '../actions/trends'
+import { fetchTrends } from '../actions/trends'
 import { connect } from 'react-redux'
 import Viewport from '../components/Viewport/Viewport'
 import Section from '../components/Section/Section'
@@ -29,7 +29,7 @@ import CircularProgress from 'material-ui/CircularProgress';
 
 class App extends Component {
     static fetchData({ params, store, url }) {
-      return store.dispatch( actionCreators.fetchTrends(url) )
+      return store.dispatch( fetchTrends(url) )
     }
 
     constructor (props) {
@@ -37,7 +37,7 @@ class App extends Component {
     }
 
     componentDidMount () {
-      this.props.actions.fetchTrends(location.origin)
+      this.props.fetchTrends(location.origin)
       //this.props.dispatch(actionCreators.fetchComments(location.origin))
     }
 
@@ -85,7 +85,7 @@ class App extends Component {
             <Footer>
               <p>
                 <span>Developed by <a href="http://benjaminspeir.com">Benjamin Speir</a></span>
-                <span><a href="https://github.com/UncleBenjen/Poem_for_your_sprog">View on GitHub</a></span>
+                <span><a href="https://github.com/UncleBenjen/TwitterTrends">View on GitHub</a></span>
               </p>
             </Footer>
 
@@ -96,7 +96,8 @@ class App extends Component {
 };
 
 function mapStateToProps(state) {
-
+  console.log(state.trends.list)
+  console.log(state.routing)
   return { 
     currentRoute: state.routing.locationBeforeTransitions.pathname,
     loading: state.trends.loading
@@ -104,7 +105,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return { actions: bindActionCreators(actionCreators, dispatch), routerActions: bindActionCreators(routerActions, dispatch) }
+  return { fetchTrends: bindActionCreators(fetchTrends, dispatch) }
 }
 
 module.exports = connect(
