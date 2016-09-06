@@ -1,1 +1,5 @@
 export trends from './trends'
+export tweets from './tweets'
+export stream from './stream'
+export search from './search'
+export filters from './filters'

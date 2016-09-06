@@ -1,0 +1,57 @@
+.tweetSearchFilterBar{
+	width:100%;
+
+	display:flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	
+	align-items: center;
+	justify-content: space-between;
+
+	flex-grow:1;
+	flex-shrink: 0;
+	flex-basis: 100%
+}
+
+.filtersContainer{
+	position: relative;
+	width: 100%;
+	
+	flex-grow:1;
+	flex-shrink: 0;
+	flex-basis: 100%;
+
+	display: flex;
+	flex-direction: row;
+
+	flex-wrap: wrap;
+
+	align-items: flex-start;
+	justify-content: space-between;
+}
+
+/* Larger than phablet */
+@media (min-width: 550px) {
+
+}
+
+/* Larger than tablet */
+@media (min-width: 750px) {
+	.tweetSearchFilterBar{
+	
+	}
+}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {
+	.tweetSearchFilterBar{
+		max-width: 600px;
+	}
+}
+
+/* Larger than Desktop HD */
+@media (min-width: 1400px) {
+	.tweetSearchFilterBar{
+				max-width: 800px;
+	}
+}

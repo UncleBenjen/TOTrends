@@ -22,15 +22,18 @@ app.use('/public', express.static(__dirname + '/public'))
 const trends = require('./src/api/routes/trends')
 app.use('/api/trends', trends)
 
+const tweets = require('./src/api/routes/tweets')
+app.use('/api/tweets', tweets)
+
 const HTML = ({ content, store }) => (
   <html>
     <head>
-      <title>Twitter-Trend Streamer</title>
+      <title>T.O. Trends</title>
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
       <link rel="icon" type="image/png" href="/public/favicon.ico" />
 
       <link rel='stylesheet' type='text/css' href='/public/style.css' />
-      <link href="https://fonts.googleapis.com/css?family=Merriweather:900i|Roboto:300,400,500" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css?family=Exo+2:900i|Roboto:300,400,500" rel="stylesheet" />
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     </head>
     <body>
@@ -104,10 +107,18 @@ app.use(function (req, res, next) {
 })
 
 
-app.listen(5000, function (err) {
+var server = app.listen(5000, function (err) {
   if (err) {
     console.log(err);
     return;
   }
   console.log('listening on http://127.0.0.1:5000')
 })
+
+// Initialize socket.io
+var io = require('socket.io')(server);
+
+import initializeStreaming from './src/api/controllers/streaming'
+
+initializeStreaming(io, app)
+

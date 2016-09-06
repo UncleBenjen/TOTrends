@@ -29,7 +29,8 @@ module.exports = {
         test: /\.css$/i,
         loader: ExtractTextPlugin.extract('style',
           `css?modules&localIdentName=[name]_[local]__[hash:base64:5]!postcss`),
-      }]
+      },
+      { test: /\.(jpe?g|png|gif|svg)$/i, loader: 'url?limit=10000!img?minimize&optimizationLevel=5&progressive=true' }]
   },
   postcss: [ 
     autoprefixer({ browsers: ['last 4 versions', 'iOS 6', '> 5%'] }) 

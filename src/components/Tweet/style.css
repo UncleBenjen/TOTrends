@@ -1,0 +1,48 @@
+.anchor{
+	font-size: 14px;
+	font-weight: 500;
+	font-family: Roboto, sans-serif;
+	color: rgba(0, 0, 0, 0.541176);
+}
+
+.expandedTweetContainer{
+	width:100%;
+	margin: 26px 0;
+}
+.tweetContainer{
+	width:100%;
+}
+.tweetHeader{
+
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500;
+	margin: 0;
+}
+.tweetHeader > span{
+	display: none;
+	font-weight: 300;
+}
+
+/* Larger than phablet */
+@media (min-width: 550px) {
+
+}
+
+/* Larger than tablet */
+@media (min-width: 750px) {
+
+}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {
+	.tweetContainer{
+		max-width:600px;
+	}
+}
+
+/* Larger than Desktop HD */
+@media (min-width: 1400px) {
+	.tweetContainer{
+		max-width:800px;
+	}
+}

@@ -10,6 +10,9 @@ const app = express();
 const trends = require('./src/api/routes/trends')
 app.use('/api/trends', trends)
 
+const tweets = require('./src/api/routes/tweets')
+app.use('/api/tweets', tweets)
+
 app.use(webpackDevMiddleware(webpack(webpackConfig), {
   publicPath: webpackConfig.output.publicPath,
   stats: { colors: true }
@@ -23,7 +26,7 @@ app.get('*', function(req, res) {
 });
 
 
-app.listen(5000, function (err) {
+var server = app.listen(5000, function (err) {
   if (err) {
     console.log(err);
     return;
@@ -31,3 +34,10 @@ app.listen(5000, function (err) {
 
   console.log('listening on http://127.0.0.1:5000')
 })
+
+// Initialize socket.io
+var io = require('socket.io')(server);
+
+import initializeStreaming from './src/api/controllers/streaming'
+
+initializeStreaming(io, app)

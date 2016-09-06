@@ -2,10 +2,13 @@ var express = require('express');
 var router = express.Router();
 var request = require("request");
 
+/*
 var Twitter = require('twitter');
 var twitterConfig = require('../../../twitter.config');
 
 var twitterClient = new Twitter(twitterConfig);
+*/
+import twitterClient from '../controllers/twitter'
 
 function getTrends(woeid, cb) {
 
@@ -20,8 +23,10 @@ function getTrends(woeid, cb) {
 
 router.get('/', function(req, res) {
 
-   var woeid = req.query['place'] || 1;
+  var woeid = req.query['place'] || 1;
 
+  woeid = 4118;
+  
   try{
     getTrends(woeid, function (error, data) {
       
