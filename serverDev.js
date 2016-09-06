@@ -34,10 +34,3 @@ var server = app.listen(5000, function (err) {
 
   console.log('listening on http://127.0.0.1:5000')
 })
-
-// Initialize socket.io
-var io = require('socket.io')(server);
-
-import initializeStreaming from './src/api/controllers/streaming'
-
-initializeStreaming(io, app)

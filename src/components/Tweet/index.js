@@ -20,7 +20,6 @@ class Tweet extends Component {
     }
 
     handleClick(){
-      console.log(window.scrollHeight)
       this.props.onClick(this.props.tweet.id_str)
     }
 

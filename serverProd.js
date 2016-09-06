@@ -7,6 +7,7 @@ import { renderToString } from 'react-dom/server'
 import { Provider } from 'react-redux'
 import { createMemoryHistory, match, RouterContext } from 'react-router'
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
+
 import { configureStore } from './src/store'
 import routes from './src/routes'
 
@@ -51,9 +52,10 @@ import customTheme from './src/theme';
 
 app.use(function (req, res, next) {
 
-  const memoryHistory = createMemoryHistory(req.path)
+  const memoryHistory = createMemoryHistory(req.url)
   let store = configureStore(memoryHistory )
   const history = syncHistoryWithStore(memoryHistory, store)
+
 
   /* react router match history */
   match({ history, routes , location: req.url }, (error, redirectLocation, renderProps) => {
@@ -73,8 +75,8 @@ app.use(function (req, res, next) {
        // const store = createStore();
 
         let { query, params } = renderProps;
+
         let url = req.protocol + '://' + req.get('host')
-        
         customTheme.userAgent = req.headers['user-agent'];
 
         // Retrieve the promises from React Router components that have a fetchData method.
@@ -115,10 +117,4 @@ var server = app.listen(5000, function (err) {
   console.log('listening on http://127.0.0.1:5000')
 })
 
-// Initialize socket.io
-var io = require('socket.io')(server);
-
-import initializeStreaming from './src/api/controllers/streaming'
-
-initializeStreaming(io, app)
 

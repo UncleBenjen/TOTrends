@@ -12,6 +12,7 @@ import CircularProgress from 'material-ui/CircularProgress';
 
 class TweetSearchResultsConnector extends Component {
     static fetchData({ params, store, url }) {
+      console.log(this.props.trend)
       return store.dispatch( fetchTweets(url, this.props.trend) )
     }
 

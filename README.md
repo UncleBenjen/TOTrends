@@ -1,9 +1,12 @@
-# Tribute to Poem\_for\_your\_sprog
+# T.O. Trends
+
+A universal react-redux app that allows you to search for tweets based on the trending topics in Toronto. 
 
 Built on: [react-router-redux-example](https://github.com/StevenIseki/react-router-redux-example)
 
 
-## Dependencies
+
+## High-level Dependencies
 
 * **react** `15.0.1`
 * **react-dom** `15.0.1`
@@ -34,8 +37,6 @@ npm run build
 npm run start:prod
 open http://127.0.0.1:3000
 ```
-
-
 
 ## License
 
