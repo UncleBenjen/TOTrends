@@ -2,6 +2,7 @@ import 'babel-polyfill'
 
 import express from 'express'
 import serialize from 'serialize-javascript'
+import qs from 'qs'
 import React from 'react'
 import { renderToString } from 'react-dom/server'
 import { Provider } from 'react-redux'
@@ -51,7 +52,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import customTheme from './src/theme';
 
 app.use(function (req, res, next) {
-
+  console.log(req.url)
   const memoryHistory = createMemoryHistory(req.url)
   let store = configureStore(memoryHistory )
   const history = syncHistoryWithStore(memoryHistory, store)

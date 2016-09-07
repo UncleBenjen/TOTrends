@@ -25,12 +25,13 @@ app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
+var PORT = process.env.PORT || 5000
+var PRIVATE_IP_ADDRESS = process.env.PRIVATE_IP_ADDRESS || 'localhost'
 
-var server = app.listen(5000, function (err) {
+var server = app.listen(PORT, PRIVATE_IP_ADDRESS, function (err) {
   if (err) {
     console.log(err);
     return;
   }
-
-  console.log('listening on http://127.0.0.1:5000')
+  console.log('listening on '+ PRIVATE_IP_ADDRESS + ':'+ PORT)
 })
