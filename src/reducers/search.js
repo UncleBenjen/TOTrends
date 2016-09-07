@@ -2,8 +2,6 @@ import { LOCATION_CHANGE } from 'react-router-redux'
 
 const constants = require('../constants');
 
-
-
 const initialState = { tweets: [], loading: false, max_id: null, selected: null }
 
 function update(state = initialState, action) {

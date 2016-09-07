@@ -13,7 +13,7 @@ import { isEmpty } from '../../utils'
 import TweetSearchFilterBar from '../../components/TweetSearchFilterBar'
 import TweetSearchResults from '../../components/TweetSearchResults'
 
-import Divider from 'material-ui/Divider';
+import Divider from 'material-ui/Divider'
 
 class TweetSearchConnector extends Component {
     static fetchData({ params, store, url }) {
@@ -21,6 +21,7 @@ class TweetSearchConnector extends Component {
       if(store.getState().routing.locationBeforeTransitions){
         trend = store.getState().routing.locationBeforeTransitions.query.q
       }
+      console.log(trend)
       return store.dispatch( fetchTweets(url, trend) )
     }
 
@@ -72,7 +73,7 @@ class TweetSearchConnector extends Component {
 function mapStateToProps(state, ownParams) {
   let trend = null
   if(state.routing.locationBeforeTransitions){
-    trend = state.routing.locationBeforeTransitions.query.q;
+    trend = state.routing.locationBeforeTransitions.query.q
   }
   return {
     tweets: state.search.tweets,
