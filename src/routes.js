@@ -4,12 +4,12 @@ import { Route, IndexRoute } from 'react-router'
 /* container components */
 import Skeleton from './components/Skeleton'
 import TrendListConnector from './connectors/TrendList'
-import TweetSearch from './components/TweetSearch'
+import TweetSearchConnector from './connectors/TweetSearch'
 
 const routes = (
   <Route path="/" component={Skeleton}>
 	<IndexRoute component={TrendListConnector} />
-	<Route path="search" component={TweetSearch} />
+	<Route path="search" component={TweetSearchConnector} />
   </Route>
 )
 

@@ -4,27 +4,32 @@
   /*margin-top:24px;*/
   padding: 16px 0;
 
-  background-color: #000;
+  background-color: rgb(33, 33, 33);
   text-align: center;
 }
 .footer > p{
-  font-family:Roboto;
-  font-weight: 300;
-  
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  font-size: 14px;
+
+  margin: 24px 0;
+  color: rgba(255, 255, 255, 0.541176) !important;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
+.footer > p > span {
+  margin: 12px 8px;
+}
 .footer a{
+  color: rgba(255, 255, 255, 0.870588);
   font-style: inherit;
   font-size: inherit;
-  color:inherit;
-  font-weight: bold;
 }
 .footer  a:hover{
-  color:#c7c7c7;
+  color:#fff;
 }
 
 .footer span{

@@ -1,5 +1,6 @@
 .tweetSearchFilterBar{
-	width:100%;
+	/*width:100%;*/
+	margin: 0 16px;
 
 	display:flex;
 	flex-direction: row;
@@ -38,7 +39,7 @@
 /* Larger than tablet */
 @media (min-width: 750px) {
 	.tweetSearchFilterBar{
-	
+		margin: 0;
 	}
 }
 
@@ -52,6 +53,6 @@
 /* Larger than Desktop HD */
 @media (min-width: 1400px) {
 	.tweetSearchFilterBar{
-				max-width: 800px;
+		max-width: 800px;
 	}
 }
