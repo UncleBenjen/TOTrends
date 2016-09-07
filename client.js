@@ -5,7 +5,6 @@ import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { Router, browserHistory, useRouterHistory } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
-import useScroll from 'scroll-behavior/lib/useStandardScroll'
 import createBrowserHistory from 'history/lib/createBrowserHistory'
 
 import { configureStore } from './src/store'
@@ -25,8 +24,6 @@ import customTheme from './src/theme';
 let state = window.__initialState__ || undefined
 const store = configureStore(browserHistory, state)
 
-//const createScrollHistory = useScroll(createBrowserHistory)
-//const appHistory = useRouterHistory(createScrollHistory)()
 const history = syncHistoryWithStore(browserHistory, store)
 
 render(
