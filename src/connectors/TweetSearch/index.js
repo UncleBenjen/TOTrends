@@ -70,12 +70,16 @@ class TweetSearchConnector extends Component {
 }
 
 function mapStateToProps(state, ownParams) {
+  let trend = null
+  if(state.routing.locationBeforeTransitions){
+    trend = state.routing.locationBeforeTransitions.query.q;
+  }
   return {
     tweets: state.search.tweets,
     loading: state.search.loading,
     max_id: state.search.max_id,
     selected: state.search.selected,
-    trend: state.routing.locationBeforeTransitions.query.q || null,
+    trend: trend,
 
     showFilters: state.filters.showFilters,
     count: state.filters.count,
