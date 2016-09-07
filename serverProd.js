@@ -71,6 +71,7 @@ app.use(function (req, res, next) {
             return next();
         }
 
+        console.log(location)
        // Create the redux store.
        // const store = createStore();
 
