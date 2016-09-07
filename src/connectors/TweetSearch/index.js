@@ -17,7 +17,10 @@ import Divider from 'material-ui/Divider';
 
 class TweetSearchConnector extends Component {
     static fetchData({ params, store, url }) {
-      const trend = store.getState().routing.locationBeforeTransitions.query.q || null
+      let trend = null
+      if(store.getState().routing.locationBeforeTransitions){
+        trend = store.getState().routing.locationBeforeTransitions.query.q
+      }
       return store.dispatch( fetchTweets(url, trend) )
     }
 
