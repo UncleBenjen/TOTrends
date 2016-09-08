@@ -27,14 +27,17 @@ app.use('/api/trends', trends)
 const tweets = require('./src/api/routes/tweets')
 app.use('/api/tweets', tweets)
 
+/*      <link rel="icon" type="image/png" href="/public/favicon.ico" />*/
+
 const HTML = ({ content, store }) => (
   <html>
     <head>
       <title>T.O. Trends</title>
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-      <link rel="icon" type="image/png" href="/public/favicon.ico" />
+
 
       <link rel='stylesheet' type='text/css' href='/public/style.css' />
+
       <link href="https://fonts.googleapis.com/css?family=Exo+2:900i|Roboto:300,400,500" rel="stylesheet" />
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     </head>
@@ -52,9 +55,13 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import customTheme from './src/theme';
 
 app.use(function (req, res, next) {
-  console.log(req.url)
+  //console.log(req.url)
+  console.log(req.query)
+  //qs.parse(req.url)
+
+ // let initialState = { routing: { locationBeforeTransitions: { query: { q:'test' } } } }
   const memoryHistory = createMemoryHistory(req.url)
-  let store = configureStore(memoryHistory )
+  let store = configureStore(memoryHistory)
   const history = syncHistoryWithStore(memoryHistory, store)
 
 
