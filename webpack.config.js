@@ -33,7 +33,7 @@ module.exports = {
       { test: /\.(jpe?g|png|gif|svg)$/i, loader: 'url?limit=10000!img?minimize&optimizationLevel=5&progressive=true' }]
   },
   postcss: [ 
-    autoprefixer({ browsers: ['last 4 versions', 'iOS 6', '> 5%'] }) 
+    autoprefixer({ browsers: ['last 2 versions', 'iOS 6', 'ie 9', 'safari 5', 'opera 12.1', 'android 4'] }) 
   ],
   plugins: [
     new ExtractTextPlugin('style.css', { allChunks: true }),

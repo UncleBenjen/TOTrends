@@ -23,7 +23,7 @@ module.exports = {
     ]
   },
   postcss: [ 
-    autoprefixer({ browsers: ['last 4 versions', 'iOS 6', '> 5%'] }) 
+    autoprefixer({ browsers: ['last 2 versions'] }) 
   ],
   plugins: [
     new ExtractTextPlugin('style.css', { allChunks: true })
