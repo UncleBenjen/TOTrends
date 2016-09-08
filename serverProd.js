@@ -56,8 +56,7 @@ import customTheme from './src/theme';
 
 app.use(function (req, res, next) {
   //console.log(req.url)
-  console.log(req.query)
-  //qs.parse(req.url)
+ //console.log(req.query)
 
  // let initialState = { routing: { locationBeforeTransitions: { query: { q:'test' } } } }
   const memoryHistory = createMemoryHistory(req.url)
@@ -80,7 +79,7 @@ app.use(function (req, res, next) {
         }
 
         //console.log(store.getState())
-        
+
        // Create the redux store.
        // const store = createStore();
 
