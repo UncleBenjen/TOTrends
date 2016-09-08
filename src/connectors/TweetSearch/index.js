@@ -21,7 +21,7 @@ class TweetSearchConnector extends Component {
       if(store.getState().routing.locationBeforeTransitions){
         trend = store.getState().routing.locationBeforeTransitions.query.q
       }
-      console.log(trend)
+      //console.log(trend)
       return store.dispatch( fetchTweets(url, trend) )
     }
 
