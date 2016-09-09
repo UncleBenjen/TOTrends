@@ -27,10 +27,11 @@ class TweetSearchResults extends Component {
           return(<Tweet key={t.id_str}  tweet={t} expanded={(this.props.selected === t.id_str)} onClick={this.props.selectTweet} /> )
         })
       }
-
+              
   		return (
         <div className={styles.TweetSearchResultsContainer}>
-          { tweets }
+
+          { this.props.err_msg ? <div>{this.props.err_msg}</div> : tweets }
           { this.props.loading ? <CircularProgress style={{ alignSelf:'center', margin:'28px' }} size={0.50}/> : <FlatButton style={{ alignSelf:'center', margin:'8px' }} secondary={true} label="More" onTouchTap={this.getMoreTweets.bind(this)} />}
         </div>
   		)

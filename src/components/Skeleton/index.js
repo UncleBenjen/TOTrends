@@ -31,7 +31,7 @@ class Skeleton extends Component {
 
             <Footer>
               <p>
-                <span>Developed by <a href="http://benjaminspeir.com">Benjamin Speir</a>.</span>
+                <span>Developed by <a href="http://benjaminspeir.com">Ben Speir</a>.</span>
                 <span>Photo by Tim Gouw on <a href='https://unsplash.com/@punttim'>Unsplash</a>.</span>
                 <span>Built on <a href='https://facebook.github.io/react/'>React</a> and <a href='http://redux.js.org/'>Redux</a>.</span>
               </p>

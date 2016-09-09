@@ -1,7 +1,7 @@
 import fetch from 'isomorphic-fetch'
 const constants = require('../constants')
 
-function fetchTrends(url, woeid = '1') {
+function fetchTrends(url, woeid = '4118') {
   return dispatch => {
     dispatch({ type: constants.FETCH_TRENDS })
     return fetch(url + '/api/trends?place=' + woeid)

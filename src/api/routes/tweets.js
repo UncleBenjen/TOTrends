@@ -10,9 +10,9 @@ var twitterClient = new Twitter(twitterConfig);
 */
 import twitterClient from '../controllers/twitter'
 
-function getTweets(q, result_type = 'recent', count='15', max_id, geocode="43.6532,79.3832,50km", until, cb) {
-
-    twitterClient.get('search/tweets', {q: q, result_type: result_type, count: count, max_id: max_id, geocode: null, until: until, include_entities: true }, function(error, trends, response){
+function getTweets(q, result_type = 'recent', count='15', max_id, geocode="43.6532,-79.3832,50km", until, cb) {
+    //console.log(geocode)
+    twitterClient.get('search/tweets', {q: q, result_type: result_type, count: count, max_id: max_id, geocode: geocode, until: until, include_entities: true }, function(error, trends, response){
       //if(error) throw error;
       //console.log(trends);  // The favorites. 
       //console.log(response);  // Raw response object. 
@@ -33,7 +33,7 @@ router.get('/', function(req, res) {
   var geocode = null;
 
   if(radius){
-    geocode = "43.6532,79.3832,"+radius+"km";
+    geocode = "43.6532,-79.3832,"+radius+"km";
   }
 
   //console.log(q)
@@ -46,7 +46,14 @@ router.get('/', function(req, res) {
         res.json( { message: "The Twitter API has returned an Error. Please try again and don't forget that I'm a great programmer."} )
       }
       else{
-        res.json( data["statuses"] )
+        
+        if(data["statuses"].length === 0){
+          res.status(204).json( data["statuses"] )
+        }
+        else{
+          res.json( data["statuses"] )
+        }
+        
       }
 
       

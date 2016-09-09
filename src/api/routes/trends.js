@@ -23,9 +23,9 @@ function getTrends(woeid, cb) {
 
 router.get('/', function(req, res) {
 
-  var woeid = req.query['place'] || 1;
+  var woeid = req.query['place'] || 4118;
 
-  woeid = 4118;
+  //woeid = 4118;
   
   try{
     getTrends(woeid, function (error, data) {

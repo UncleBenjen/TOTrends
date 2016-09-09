@@ -54,6 +54,7 @@ class TweetSearchConnector extends Component {
       let restulsProps = {
         tweets: this.props.tweets,
         loading: this.props.loading,
+        err_msg: this.props.err_msg,
         max_id: this.props.max_id,
         selected: this.props.selected,
         trend: this.props.trend,
@@ -78,6 +79,7 @@ function mapStateToProps(state, ownParams) {
   return {
     tweets: state.search.tweets,
     loading: state.search.loading,
+    err_msg: state.search.err_msg,
     max_id: state.search.max_id,
     selected: state.search.selected,
     trend: trend,

@@ -26,25 +26,42 @@ function fetchTweets(url, trend, max_id=null) {
     }
     //console.log(endpoint)
     return fetch( endpoint )
-      .then( req => req.json() ) 
+      .then( (res) => {
+        if(res.status === 204)
+        {
+          throw new Error('No tweets were found.')
+        }
+        else{
+          return res.json()
+        } 
+      } ) 
       .then( json => dispatch(receiveTweets(json)) )
+      .catch( (e) => {
+        dispatch(fetchTweetsFailed('No tweets were found! Please try again with a different filter.'))
+        console.log(e)
+      })
+  }
+}
+
+function fetchTweetsFailed(reason){
+  return {
+    type: constants.FETCH_TWEETS_FAILED,
+    payload: reason
   }
 }
 
 function receiveTweets(json) {
   return {
     type: constants.RECEIVE_TWEETS,
-    json: json,
-    receivedAt: Date.now()
+    json: json
   }
 }
 
 function selectTweet(tweetId){
   return {
     type: constants.SELECT_TWEET,
-    json: { id: tweetId },
-    receivedAt: Date.now()
+    json: { id: tweetId }
   }
 }
 
-module.exports = { fetchTweets, receiveTweets, selectTweet }
+module.exports = { fetchTweets, fetchTweetsFailed, receiveTweets, selectTweet }
