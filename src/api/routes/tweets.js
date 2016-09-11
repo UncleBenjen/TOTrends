@@ -11,7 +11,6 @@ var twitterClient = new Twitter(twitterConfig);
 import twitterClient from '../controllers/twitter'
 
 function getTweets(q, result_type = 'recent', count='15', max_id, geocode="43.6532,-79.3832,50km", until, cb) {
-    //console.log(geocode)
     twitterClient.get('search/tweets', {q: q, result_type: result_type, count: count, max_id: max_id, geocode: geocode, until: until, include_entities: true }, function(error, trends, response){
       //if(error) throw error;
       //console.log(trends);  // The favorites. 

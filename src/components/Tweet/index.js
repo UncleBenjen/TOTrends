@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import styles from './style.css'
 
+import {findDOMNode} from 'react-dom'
+
 import {ListItem} from 'material-ui/List';
 import Subheader from 'material-ui/Subheader';
 import Avatar from 'material-ui/Avatar';
@@ -20,7 +22,16 @@ class Tweet extends Component {
     }
 
     handleClick(){
+      //console.log(window.scrollY)
+      //console.log(findDOMNode(document.body).scrollTop)
+      //console.log(findDOMNode(this.refs.tweetContainer).getBoundingClientRect())
+     
+      //window.scrollTo(0, findDOMNode(document.body).scrollTop + (findDOMNode(this.refs.tweetContainer).getBoundingClientRect().top - 100))
+      
       this.props.onClick(this.props.tweet.id_str)
+      /*TODO:
+        -wait for a second than try scrolling?
+        -or handle the scroll logic in the reducer, but i dont think that makes sense*/
     }
 
     renderExpandedTweet(){
@@ -74,7 +85,7 @@ class Tweet extends Component {
             primaryText={<h4 className={styles.tweetHeader}>{this.props.tweet.user.name} <span>({this.props.tweet.user.screen_name})</span></h4>}
             secondaryText={<p dangerouslySetInnerHTML={{ __html: this.props.tweet.text }}></p>}
             secondaryTextLines={2}
-            rightIcon={ this.props.tweet.entities.media ? <ImageIcon color="b9b9b9" /> : null} 
+            rightIcon={ this.props.tweet.entities.media ? <ImageIcon color="#b9b9b9" /> : null} 
           />}
         </Paper>
 

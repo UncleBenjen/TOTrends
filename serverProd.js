@@ -1,3 +1,4 @@
+require('es6-promise').polyfill();
 import 'babel-polyfill'
 
 import express from 'express'

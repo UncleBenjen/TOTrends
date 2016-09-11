@@ -63,7 +63,7 @@ class TweetSearchConnector extends Component {
         selectTweet: this.props.selectTweet,
       }
       return(       
-        <div>
+        <div style={{width:'100%'}}>
           <TweetSearchFilterBar {...filterBarProps} />
           <Divider />
           <TweetSearchResults {...restulsProps} />

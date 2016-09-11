@@ -30,17 +30,17 @@ class TweetSearchFilterBar extends Component {
 
     changeSort(event, key, val){
       this.props.changeFilter('result_type', val)
-      this.props.fetchTweets(location.origin, this.props.trend, this.props.max_id)
+      this.props.fetchTweets(location.origin, this.props.trend)
     }
 
     changeRadius(event, key, val){
       this.props.changeFilter('radius', val)
-      this.props.fetchTweets(location.origin, this.props.trend, this.props.max_id)
+      this.props.fetchTweets(location.origin, this.props.trend)
     }
 
     changeBeforeDate(event, date){
       this.props.changeFilter('before', date)
-      this.props.fetchTweets(location.origin, this.props.trend, this.props.max_id)
+      this.props.fetchTweets(location.origin, this.props.trend)
     }
 
   	render (){
@@ -57,21 +57,12 @@ class TweetSearchFilterBar extends Component {
 
           { this.props.showFilters ? 
             <div className={styles.filtersContainer}>
-                   <SelectField
-                    disabled={this.props.loading}
-                    value={this.props.sort}
-                    floatingLabelText="Sort by:"
-                    floatingLabelFixed={true}
-                    onChange={this.changeSort.bind(this)}>
-                    <MenuItem value={'recent'} primaryText="Most Recent" />
-                    <MenuItem value={'popular'} primaryText="Popular" />
-                    <MenuItem value={'mixed'} primaryText="Mixed" />
-                  </SelectField>
+
 
                   <SelectField
                     disabled={this.props.loading}
                     value={this.props.count}
-                    floatingLabelText="# of Tweets:"
+                    floatingLabelText="# of Tweets per request:"
                     floatingLabelFixed={true}
                     onChange={this.changeCount.bind(this)}>
                     <MenuItem value={'15'} primaryText="15" />
@@ -83,23 +74,17 @@ class TweetSearchFilterBar extends Component {
                   <SelectField
                     disabled={this.props.loading}
                     value={this.props.radius}
-                    floatingLabelText="Radius:"
+                    floatingLabelText="Search radius from city center:"
                     floatingLabelFixed={true}
                     onChange={this.changeRadius.bind(this)}>
+                    <MenuItem value={'25'} primaryText="25 km" />
                     <MenuItem value={'50'} primaryText="50 km" />
                     <MenuItem value={'100'} primaryText="100 km" />
                     <MenuItem value={'150'} primaryText="150 km" />
                     <MenuItem value={'250'} primaryText="250 km" />
                   </SelectField>
 
-                  <DatePicker 
-                    disabled={this.props.loading}
-                    autoOk={true}
-                    floatingLabelText="Before:"
-                    defaultDate={new Date()}
-                    maxDate={new Date()}
-                    minDate={minDate}
-                    onChange={this.changeBeforeDate.bind(this)}/>
+  
 
             </div> : null }
         </div>
@@ -108,15 +93,26 @@ class TweetSearchFilterBar extends Component {
 
 }
 
-/*
-          <SelectField
-            value='recent'
-            style={{width:'140px'}}>
-            <MenuItem value={'recent'} primaryText="Most Recent" />
-            <MenuItem value={'popular'} primaryText="Popular" />
-            <MenuItem value={'mixed'} primaryText="Mixed" />
-          </SelectField>
+/*                 
+                <DatePicker 
+                    disabled={this.props.loading}
+                    autoOk={true}
+                    floatingLabelText="Before:"
+                    defaultDate={new Date()}
+                    maxDate={new Date()}
+                    minDate={minDate}
+                    onChange={this.changeBeforeDate.bind(this)}/>
 
+  <SelectField
+                    disabled={this.props.loading}
+                    value={this.props.sort}
+                    floatingLabelText="Sort by:"
+                    floatingLabelFixed={true}
+                    onChange={this.changeSort.bind(this)}>
+                    <MenuItem value={'recent'} primaryText="Most Recent" />
+                    <MenuItem value={'popular'} primaryText="Popular" />
+                    <MenuItem value={'mixed'} primaryText="Mixed" />
+                  </SelectField>
 */
 
 export default TweetSearchFilterBar

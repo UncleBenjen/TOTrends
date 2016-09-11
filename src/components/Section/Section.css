@@ -32,13 +32,10 @@
 /* Larger than desktop */
 @media (min-width: 1000px) {
   .section{
-    max-width: 800px;
+   
   }
 }
 
 /* Larger than Desktop HD */
 @media (min-width: 1400px) {
-  .section{
-    /*max-width: 1200px;*/
-  }
 }

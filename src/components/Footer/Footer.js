@@ -18,7 +18,7 @@ export default class Footer extends Component {
     	<footer className={styles.footer}>
     		{this.props.children}
 
-        <IconButton href='https://github.com/UncleBenjen/TOTrends' disableTouchRipple={true}><GitHubIcon color={'DCDCDC'} hoverColor={'FFFFFF'}/></IconButton>
+        <IconButton href='https://github.com/UncleBenjen/TOTrends' disableTouchRipple={true}><GitHubIcon color={'#DCDCDC'} hoverColor={'#FFFFFF'}/></IconButton>
     	</footer>
     )
   }

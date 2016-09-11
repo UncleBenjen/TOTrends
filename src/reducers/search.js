@@ -29,6 +29,7 @@ function update(state = initialState, action) {
 
 		case constants.CHANGE_FILTER: 
 			return Object.assign({}, state, { tweets: [], max_id: null, selected: null })
+			
 		default:
 			return state
   }

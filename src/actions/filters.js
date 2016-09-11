@@ -1,5 +1,3 @@
-import fetch from 'isomorphic-fetch'
-
 const constants = require('../constants')
 
 function toggleFilters(){
