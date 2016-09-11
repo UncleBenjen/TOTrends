@@ -25,11 +25,13 @@ const store = configureStore(browserHistory, state)
 
 const history = syncHistoryWithStore(browserHistory, store)
 
-import { ReactGA } from 'react-ga'
+import ReactGA from 'react-ga'
 
-if(process.env.GA_ID){
-	ReactGA.initialize(GA_ID);
+if(process.env.GA_UA){
+	ReactGA.initialize(process.env.GA_UA);
 }
+
+console.log(process.env.GA_UA)
 
 function registerPageView(){
 	ReactGA.set({ page: window.location.pathname });
@@ -38,7 +40,7 @@ function registerPageView(){
 
 function onPageUpdate(){
 	window.scrollTo(0, 0); 
-	if(process.env.GA_ID){
+	if(process.env.GA_UA){
 		registerPageView();
 	}
 }

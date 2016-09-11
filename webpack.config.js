@@ -3,6 +3,8 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 
+var GA_UA = process.env.GA_UA || null;
+
 module.exports = {
   entry: {
     app: './client',
@@ -38,6 +40,7 @@ module.exports = {
   plugins: [
     new ExtractTextPlugin('style.css', { allChunks: true }),
     new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"' }),
+    new webpack.DefinePlugin({ 'process.env.GA_UA': JSON.stringify(GA_UA) }),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({minimize: true}),
     new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js')
