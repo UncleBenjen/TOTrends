@@ -31,7 +31,7 @@ if(process.env.GA_UA){
 	ReactGA.initialize(process.env.GA_UA);
 }
 
-console.log(process.env.GA_UA)
+//console.log(process.env.GA_UA)
 
 function registerPageView(){
 	ReactGA.set({ page: window.location.pathname });
