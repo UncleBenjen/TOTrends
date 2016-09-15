@@ -16,13 +16,9 @@ function update(state = initialState, action) {
 		case constants.RECEIVE_TWEETS:
 			if(action.payload.length > 0){
 				if(state.max_id){
-					console.log(state.max_id)
-					console.log( action.payload[action.payload.length - 1])
 					return Object.assign({}, state, { loading: false, tweets: [...state.tweets, ...action.payload.slice(1, action.payload.length)], max_id: action.payload[action.payload.length - 1].id_str, err_msg:null })
 				}
 				else{
-					console.log(state.max_id)
-					console.log( action.payload[action.payload.length - 1])
 					return Object.assign({}, state, { loading: false, tweets: [...state.tweets, ...action.payload.slice(0, action.payload.length)], max_id: action.payload[action.payload.length - 1].id_str, err_msg:null })
 				}
 				

@@ -43,8 +43,6 @@ class TweetSearchResults extends Component {
           
         })
 
-        console.log(tweets)
-
       }
               
   		return (
