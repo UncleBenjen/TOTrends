@@ -1,22 +1,13 @@
-.anchor{
-	font-size: 14px;
-	font-weight: 500;
-	font-family: Roboto, sans-serif;
-	color: rgba(0, 0, 0, 0.541176);
-}
 
-.expandedTweetContainer{
-	width:100%;
-	margin: 26px 0;
-}
 .tweetContainer{
 	width:100%;
 }
+
 .tweetHeader{
 
 	font-family: 'Roboto', sans-serif;
 	font-weight: 500;
-	margin: 0;
+	margin: 0 !important;
 }
 .tweetHeader > span{
 	display: none;

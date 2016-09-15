@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux'
 
 import { push } from 'react-router-redux'
 
-import { toggleFilters, changeFilter } from '../../actions/filters'
+import { toggleFilters, changeFilterAndFetchTweets } from '../../actions/filters'
 import { fetchTweets, selectTweet } from '../../actions/search'
 
 import { isEmpty } from '../../utils'
@@ -38,8 +38,8 @@ class TweetSearchConnector extends Component {
     render () {
       let filterBarProps = {
         trend: this.props.trend,
-        max_id: this.props.max_id,
         loading: this.props.loading,
+        max_id: this.props.max_id,
         showFilters: this.props.showFilters,
         count: this.props.count,
         sort: this.props.sort,
@@ -49,13 +49,13 @@ class TweetSearchConnector extends Component {
         fetchTweets: this.props.fetchTweets,
         push: this.props.push,
         toggleFilters: this.props.toggleFilters,
-        changeFilter: this.props.changeFilter
+        changeFilterAndFetchTweets: this.props.changeFilterAndFetchTweets
       }
       let restulsProps = {
         tweets: this.props.tweets,
         loading: this.props.loading,
+        max_id:this.props.max_id,
         err_msg: this.props.err_msg,
-        max_id: this.props.max_id,
         selected: this.props.selected,
         trend: this.props.trend,
 
@@ -99,7 +99,7 @@ function mapDispatchToProps(dispatch) {
 
     push: bindActionCreators(push, dispatch),
     toggleFilters: bindActionCreators(toggleFilters, dispatch),
-    changeFilter: bindActionCreators(changeFilter, dispatch)
+    changeFilterAndFetchTweets: bindActionCreators(changeFilterAndFetchTweets, dispatch)
   }
 }
 

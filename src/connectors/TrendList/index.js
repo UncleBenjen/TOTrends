@@ -2,12 +2,13 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import { push } from 'react-router-redux'
 
 import { fetchTrends } from '../../actions/trends'
 
 import { isEmpty } from '../../utils'
 
-import TrendList from '../../components/Trends/List'
+import TrendList from '../../components/TrendList'
 
 import CircularProgress from 'material-ui/CircularProgress';
 
@@ -40,7 +41,8 @@ function mapStateToProps(state, ownParams) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    fetchTrends: bindActionCreators(fetchTrends, dispatch)
+    fetchTrends: bindActionCreators(fetchTrends, dispatch),
+    push: bindActionCreators(push, dispatch)
   }
 }
 

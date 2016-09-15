@@ -17,7 +17,13 @@ function fetchTweets(url, trend, max_id=null) {
       endpoint += ('&result_type=' + filters.result_type)
     }
     if(filters.count){
-      endpoint += ('&count=' + filters.count)
+      if(max_id){
+        endpoint += ('&count=' + (filters.count + 1))
+      }
+      else{
+        endpoint += ('&count=' + filters.count)        
+      }
+
     }
     if(filters.radius){
       endpoint += ('&radius=' + filters.radius)
@@ -54,14 +60,14 @@ function fetchTweetsFailed(reason){
 function receiveTweets(json) {
   return {
     type: constants.RECEIVE_TWEETS,
-    json: json
+    payload: json
   }
 }
 
 function selectTweet(tweetId){
   return {
     type: constants.SELECT_TWEET,
-    json: { id: tweetId }
+    payload: tweetId
   }
 }
 

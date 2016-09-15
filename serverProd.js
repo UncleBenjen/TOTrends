@@ -34,13 +34,28 @@ const HTML = ({ content, store }) => (
   <html>
     <head>
       <title>T.O. Trends</title>
+      <meta name="description" content="Check out the top 50 trends in Toronto, to see what people in Toronto are actively Tweeting about." />
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:site" content="@bem_spur" />
+      <meta name="twitter:title" content="T.O. Trends" />
+      <meta name="twitter:description" content="Check out the top 50 trends in Toronto, to see what people in Toronto are actively Tweeting about." />
+      <meta name="twitter:creator" content="@bem_spur" />
+      <meta name="twitter:image" content="https://source.unsplash.com/uhezNiYWSVU/400x300" />
+
+      <meta property="og:title" content="T.O. Trends" />
+      <meta property="og:type" content="article" />
+      <meta property="og:url" content="http://www.totrends.ca/" />
+      <meta property="og:image" content="https://source.unsplash.com/uhezNiYWSVU/400x300" />
+      <meta property="og:description" content="Check out the top 50 trends in Toronto, to see what people in Toronto are actively Tweeting about." /> 
+      <meta property="og:site_name" content="TO Trends" />
 
       <link rel='stylesheet' type='text/css' href='/public/style.css' />
 
-      <link href="https://fonts.googleapis.com/css?family=Exo+2:900i|Roboto:300,400,500" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css?family=Exo+2:900,900i|Roboto:300,400,500" rel="stylesheet" />
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+      
     </head>
     <body>
       <div id='mount' dangerouslySetInnerHTML={{ __html: content }}/>
@@ -105,6 +120,7 @@ app.use(function (req, res, next) {
                   </Provider>
                 </MuiThemeProvider>
               )
+
               res.send('<!doctype html>\n' + renderToString(<HTML content={content} store={store}/>))
             })
             .catch((err) => {

@@ -18,7 +18,7 @@ export default {
     accent2Color: grey100,
     accent3Color: grey500,
     textColor: '#000',
-    alternateTextColor: darken('#C7C7C7',0.3),
+    alternateTextColor: '#fff',
     canvasColor: '#f8f8f8',
     borderColor: grey300,
     disabledColor: fade(darkBlack, 0.3),

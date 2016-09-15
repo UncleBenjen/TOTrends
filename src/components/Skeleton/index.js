@@ -21,7 +21,7 @@ class Skeleton extends Component {
     }
 
     render (){
-
+      //<div className={styles.footerImage}>&nbsp;</div>
       return (
           <Viewport> 
 
@@ -29,11 +29,12 @@ class Skeleton extends Component {
 
             <Section>{ this.props.children }</Section>
 
+
             <Footer>
               <p>
                 <span>Developed by <a href="http://benjaminspeir.com">Ben Speir</a>.</span>
-                <span>Photo by Tim Gouw on <a href='https://unsplash.com/@punttim'>Unsplash</a>.</span>
-                <span>Built on <a href='https://facebook.github.io/react/'>React</a> and <a href='http://redux.js.org/'>Redux</a>.</span>
+                <span>Photos by <a  rel='nofollow' href='https://unsplash.com/@punttim'>Tim Gouw</a>, and the <a rel='nofollow' href='https://unsplash.com'>Unsplash</a> community.</span>
+                <span>Built on <a  rel='nofollow' href='https://facebook.github.io/react/'>React</a>, <a  rel='nofollow' href='http://redux.js.org/'>Redux</a>, and <a rel='nofollow' href='http://www.material-ui.com/'>Material-UI</a>.</span>
               </p>
             </Footer>
 

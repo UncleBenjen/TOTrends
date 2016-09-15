@@ -9,20 +9,20 @@
 .splashContainer > h1{
 	margin: 0;
 	color:#021B29;
-	font-size: 2.0rem;
+	font-size: 2.5rem;
 	font-family: 'Exo 2', sans-serif;
 	font-weight:900;
 	font-style: italic;
 }
 
 .circular {
-	margin: 18px 0;
-	width: 100px;
-	height: 100px;
+	margin: 24px 0;
+	width: 125px;
+	height: 125px;
 	border-radius: 50%;
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
-	background: url(https://hd.unsplash.com/photo-1465923083817-2eda469e2579) no-repeat;
+	background: url(https://source.unsplash.com/uhezNiYWSVU/400x300) no-repeat;
   	background-size:cover;
 	background-position: 50% 0;
 	box-shadow: rgba(0, 0, 0, 0.156863) 0px 3px 10px, rgba(0, 0, 0, 0.227451) 0px 3px 10px;
@@ -38,13 +38,9 @@
 	.circular {
 		width: 150px;
 		height: 150px;
-		border-radius: 75px;
-		-webkit-border-radius: 75px;
-		-moz-border-radius: 75px;
-	}
-	.splashContainer > h1{
-		margin-left: 16px;
-		font-size:2.5rem;
+		border-radius: 50%;
+		-webkit-border-radius: 50%;
+		-moz-border-radius: 50%;
 	}
 }
 

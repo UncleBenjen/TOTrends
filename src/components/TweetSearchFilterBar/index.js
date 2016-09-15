@@ -17,30 +17,24 @@ class TweetSearchFilterBar extends Component {
     	super(props) 
     }
 
-    componentDidMount(){}
-
     deleteSelection(){
       this.props.push('/')
     }
 
     changeCount(event, key, val){
-      this.props.changeFilter('count', val)
-      this.props.fetchTweets(location.origin, this.props.trend, this.props.max_id)
+      this.props.changeFilterAndFetchTweets('count', val, location.origin, this.props.trend)
     }
 
     changeSort(event, key, val){
-      this.props.changeFilter('result_type', val)
-      this.props.fetchTweets(location.origin, this.props.trend)
+      this.props.changeFilterAndFetchTweets('result_type', val, location.origin, this.props.trend)
     }
 
     changeRadius(event, key, val){
-      this.props.changeFilter('radius', val)
-      this.props.fetchTweets(location.origin, this.props.trend)
+      this.props.changeFilterAndFetchTweets('radius', val, location.origin, this.props.trend)
     }
 
     changeBeforeDate(event, date){
-      this.props.changeFilter('before', date)
-      this.props.fetchTweets(location.origin, this.props.trend)
+      this.props.changeFilterAndFetchTweets('before', date, location.origin, this.props.trend)
     }
 
   	render (){
@@ -65,16 +59,16 @@ class TweetSearchFilterBar extends Component {
                     floatingLabelText="# of Tweets per request:"
                     floatingLabelFixed={true}
                     onChange={this.changeCount.bind(this)}>
-                    <MenuItem value={'15'} primaryText="15" />
-                    <MenuItem value={'25'} primaryText="25" />
-                    <MenuItem value={'50'} primaryText="50" />
-                    <MenuItem value={'100'} primaryText="100" />
+                    <MenuItem value={15} primaryText="15" />
+                    <MenuItem value={25} primaryText="25" />
+                    <MenuItem value={50} primaryText="50" />
+                    <MenuItem value={100} primaryText="99" />
                   </SelectField>
 
                   <SelectField
                     disabled={this.props.loading}
                     value={this.props.radius}
-                    floatingLabelText="Search radius from city center:"
+                    floatingLabelText="Search radius (from city hall):"
                     floatingLabelFixed={true}
                     onChange={this.changeRadius.bind(this)}>
                     <MenuItem value={'25'} primaryText="25 km" />

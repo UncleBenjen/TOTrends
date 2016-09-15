@@ -1,4 +1,10 @@
-
+.footerImage{
+	width:100%;
+	height:300px;
+	background: url(https://source.unsplash.com/6b4LAsSMvjk) no-repeat;
+	background-size:cover;
+	background-position: 50% 33%;
+}
 
 
 /* Larger than phablet */
@@ -12,11 +18,19 @@
 }
 
 /* Larger than desktop */
-@media (min-width: 1000px) {
-
+@media (min-width: 1000px){
+.footerImage{
+  	width:100%;
+	height:500px;
+  	background: url(https://source.unsplash.com/6b4LAsSMvjk/1600x900) no-repeat;
+  	background-size:cover;
+	background-position: 50% 25%;
+  }
 }
 
 /* Larger than Desktop HD */
 @media (min-width: 1200px) {
-  
+  .footerImage{
+	display: none;
+  }
 }

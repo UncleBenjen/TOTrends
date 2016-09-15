@@ -3,7 +3,7 @@ const constants = require('../constants');
 
 const initialState = { 
 	showFilters: false, 
-	count: '15', 
+	count: 15, 
 	result_type: 'recent',
 	radius: '50', 
 	before: null

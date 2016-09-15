@@ -1,5 +1,7 @@
 const constants = require('../constants')
 
+import { fetchTweets } from './search'
+
 function toggleFilters(){
   return {
     type: constants.TOGGLE_FILTERS,
@@ -15,4 +17,12 @@ function changeFilter(filter, value){
   }
 }
 
-module.exports = { toggleFilters, changeFilter }
+function changeFilterAndFetchTweets(filter, value, url, trend, max_id=null){
+	return (dispatch, getState) => {
+		dispatch(changeFilter(filter, value))
+		dispatch(fetchTweets(url, trend, max_id))
+	}
+
+}
+
+module.exports = { toggleFilters, changeFilter, changeFilterAndFetchTweets }
