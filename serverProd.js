@@ -53,7 +53,7 @@ const HTML = ({ content, store }) => (
 
       <link rel='stylesheet' type='text/css' href='/public/style.css' />
 
-      <link href="https://fonts.googleapis.com/css?family=Exo+2:900,900i|Roboto:300,400,500" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css?family=Exo+2:900,900i%7CRoboto:300,400,500" rel="stylesheet" />
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
       
     </head>
